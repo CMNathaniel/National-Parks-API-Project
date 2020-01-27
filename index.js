@@ -54,7 +54,7 @@ function getParks(query, maxResults) {
 function watchForm() {
   $('form').submit(event => {
     event.preventDefault();
-    const searchTerm = $('#js-search-term').val();
+    const searchTerm = $('#js-search-term').val().toUpperCase().split(' ', 3);
     const maxResults = $('#js-max-results').val();
     getParks(searchTerm, maxResults);
   });
